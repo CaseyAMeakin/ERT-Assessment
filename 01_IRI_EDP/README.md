@@ -1,7 +1,6 @@
-# Asessment IRI EDP
+# Asessment: IRI EDP
 
-
-### Assessment Description
+### Description (pasted from original)
 
 > Create a C-based modeling and simulation program that drive IRI model Fortran code. The code should capture and generate vertical EDP (Electron Density Profile) for a given time and location of interest.
 > time of interest: Mar 3 2021 UT 11:00:00 and Mar 4, 2021 UT 23:00:00 location o interest: Lat 37.8N and Lon 75.4W
@@ -11,4 +10,61 @@
 > 3) Use gnuplot (www.gnuplot.info) or other similar C-based plotting tools to generate plots of EDP parameters using the shared objective created in step 1.
 > 4) alternatively, use F2PY (https://www.numfys.net/howto/F2PY/) and Python to create EDP plots using the shared object created in step 1. (Although C-based plotting is the preferred solution)
 > 5) Furnish instructions/documentation, etc. on how to run the code and lesson/insights learned by doing this exercise.
+
+
+### Approach
+
+A C driver for the IRI program was created by writing a very thin wrapper around the fortran IRI test program *iritest.for* which is distributed with the IRI model at [irimodel.or](http://irimodel.org/) website (version IRI-2020 of the model was used for this exercise). The *iritest.for* program was used to create a subroutine to provide an api for the C driver program by hard coding all of the IRI model input parameters except for the date and time, which are the only parameters to be varied for the project. The resulting fortran subroutine has the following call signature:
+
+```
+SUBROUTINE IRITEST_SUB(
+  iy,          ! year in integer format yyyy, intent(in)
+  imd,         ! date in integer format mmdd, intent(in)
+  hour,        ! UTC hour in real*8, intent(in)
+  num_steps,   ! integer with intent(out), number of steps in output arrays
+  height_km,   ! array of altitude in ionosphere, intent(out)
+  ne_cc        ! array of electron density per cm^3, intent(out)
+)
+```
+
+
+For plotting I used the minimalist C language-based GNU [libplot](https://www.gnu.org/software/plotutils/manual/en/html_node/libplot.html#libplot) library from the [GNU plotutils package](https://www.gnu.org/software/plotutils/manual/en/html_node/index.html). The advantage is that it is highly portable. The disadvantage is that it consists of only very low level drawing utilities thus requiring significant coding effort to implement scientific graphing capabilities. Another disadvantage is that the documentation is difficult to navigate and incomplete for the C api.
+
+
+
+### Usage
+
+The source code located in this folder builds a program called **iri_c.x** which will plot the electron density profile (EDP) in the ionosphere at a given geographical location (i.e., lat and long) and time (in UTC).
+
+As currently implemented, the program will plot the EDP at the geographical location with latitude, longitude = 37.8N, 75.4W and for the two date times of Mar 3 2021 UT 11:00:00 and Mar 4, 2021 UT 23:00:00.
+
+The program is run from the **./dat** folder using the following command:
+
+```
+./iri_c.x
+```
+
+If successful the program will create a png image file for each of the two EDP plots described above in the files named *edp_03032021_11UTC.png* and *edp_04032021_23UTC.png*.
+
+
+### Installation
+
+The program **iri_c.x** is built from the project directory (this folder) using the makefile there, as follows:
+
+```
+make iri_c.x
+```
+
+The program is executed from the *./dat* sub directory which contains a symbolic link to the executable as well as required supporting data (i.e., the *.dat and *.asc files).
+
+### Project Organization
+
+The source code the project is organized as follows.
+
+
+
+
+
+
+
 
