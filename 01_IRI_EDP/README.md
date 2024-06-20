@@ -1,6 +1,6 @@
 # Asessment: IRI EDP
 
-### Description (pasted from original)
+### Description (original problem statement)
 
 > Create a C-based modeling and simulation program that drive IRI model Fortran code. The code should capture and generate vertical EDP (Electron Density Profile) for a given time and location of interest.
 > time of interest: Mar 3 2021 UT 11:00:00 and Mar 4, 2021 UT 23:00:00 location o interest: Lat 37.8N and Lon 75.4W
@@ -47,7 +47,7 @@ The program is run from the **./dat** folder using the following command:
 If successful the program will create a png image file for each of the two EDP plots described above in the files named *edp_03032021_11UTC.png* and *edp_04032021_23UTC.png*.
 
 
-### Installation
+### Installation & Dependencies
 
 The program **iri_c.x** is built from the project directory (this folder) using the makefile there, as follows:
 
@@ -59,7 +59,47 @@ The program is executed from the *./dat* sub directory which contains a symbolic
 
 ### Project Organization
 
-The source code the project is organized as follows.
+The source code for the project is organized into the following sub directories:
+
+```
+.
+├── dat
+└── src
+    ├── iri_2020
+    │   └── src
+    ├── my_c_driver
+    ├── my_plotter
+    └── plotutils-2.6 (**not checked into repository)
+```
+
+where:
+
+* the `src/iri_2020/src` folder holds the IRI 2020 model source code;
+* the `src/my_c_driver` folder holds the C-language based driver in file `iri_driver.c`;
+* the `src/my_plotter` folder holds a minimalist graph plotter I wrote based on GNU libplot;
+* the `src/plotutils-2.6` folder, which isn't checked into the repository, holds the libplot library and include files.
+
+
+
+### Reference Output Images
+
+After running the **iri_c.x** program the following two plot files are created in the `./dat` folder:
+
+<p align="left">
+
+<img src="dat/edp_03042021_23.00UTC.png" alt="edp_03042021_23.00UTC.png" width="75%">
+<br />
+<b>Figure: edp_03042021_23.00UTC.png</b>
+</p>
+<p align="left">
+
+<img src="dat/edp_03032021_11.00UTC.png" alt="edp_03032021_11.00UTC.png" width="75%">
+<br />
+<b>Figure: edp_03032021_11.00UTC.png</b>
+</p>
+
+
+
 
 
 
