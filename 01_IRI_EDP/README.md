@@ -1,4 +1,4 @@
-# Asessment: IRI EDP
+# Assessment: IRI EDP
 
 ### Description (original problem statement)
 
