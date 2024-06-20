@@ -39,6 +39,7 @@ Given the time constraints, this code is provided merely as a proof-of-principle
 
 * Capabilities: The current code contains the absolute bare minimum functionality requested and is very much hard coded. Real-world applications would likely benefit from providing more user control over the various parameters involved as well as extending the plotting capabilities and associated abstractions.
 
+* Lint and format: It would be useful to lint the code and apply a formatter.
 
 ### Usage
 
