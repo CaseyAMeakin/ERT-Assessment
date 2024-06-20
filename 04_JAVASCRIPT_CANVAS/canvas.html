@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    #theCanvas {
+      outline: 2px solid blueviolet;
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      border: none;
+    }
+
+    #theButtonDiv {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    #theButton {
+      text-align: center;
+      border: none;
+      color: black;
+      height: 40px;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 0px 10px;
+    }
+
+    #theButton:hover {
+      box-shadow: 2px 2px blueviolet;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" type="text/javascript"></script>
+
+  <script>
+
+    // Application State
+
+    var dataShown = false;
+
+
+    // Helper Functions
+
+    const drawShapes = (ctx) => {
+      const xCirc = 3 * theCanvas.width / 4;
+      const yCirc = theCanvas.width / 4;
+      const rCirc = theCanvas.width / 4;
+      ctx.beginPath();
+      ctx.arc(xCirc, yCirc, rCirc, 0, 2 * Math.PI);
+      ctx.fillStyle = 'salmon';
+      ctx.fill();
+      ctx.stroke();
+
+      const xEllipse = theCanvas.width / 4;
+      const yEllipse = 3 * theCanvas.width / 4;
+      const rxEllipse = theCanvas.width / 4;
+      const ryEllipse = theCanvas.width / 8;
+      const rotEllipse = Math.random() * 2 * Math.PI; // random orientation for ellipse
+
+      ctx.beginPath();
+      ctx.ellipse(xEllipse, yEllipse, rxEllipse, ryEllipse, rotEllipse, 0, 2 * Math.PI);
+      ctx.fillStyle = 'salmon';
+      ctx.fill();
+      ctx.stroke();
+    };
+
+    const clearCanvas = (ctx) => {
+      ctx.clearRect(0, 0, theCanvas.width, theCanvas.height);
+    };
+
+
+    const toggleDrawing = () => {
+      const theCanvas = $("#theCanvas")[0];
+      const ctx = theCanvas.getContext('2d');
+      const theButton = $("#theButton")[0];
+      if (!dataShown) {
+        drawShapes(ctx);
+        theButton.innerHTML = "Clear";
+        dataShown = true;
+      } else {
+        clearCanvas(ctx);
+        theButton.innerHTML = "Draw";
+        dataShown = false;
+      }
+    };
+
+    // Init page
+
+    $(document).ready(function () {
+      const theButton = $("#theButton")[0];
+      theButton.innerHTML = "Draw";
+      $("#theButton").click(() => toggleDrawing());
+    });
+  </script>
+
+
+</head>
+
+<div id="container">
+
+  <div id="theButtonDiv">
+    <button type="button" id="theButton" value="Click me">Click me</button>
+  </div>
+
+  <div>
+    <canvas id="theCanvas" width="400" height="400"></canvas>
+  </div>
+
+</div>
+
+</html>
