@@ -16,6 +16,10 @@ A single state variable was used (`bool:dataShown`) so that the user can toggle 
 
 The ellipse was drawn in the lower-left quadrant as requested, and I gave it a random orientation to spice it up. ;-)
 
+### Usage
+
+The web page is viewed by pointing a browser at the html file `canvas.html`.
+
 
 ### Sample Output (Screenshots)
 
