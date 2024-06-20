@@ -143,7 +143,7 @@ int main(int argc, char** argv) {
     char plt_fname[100];
     char plt_title[100];
 
-    sprintf(plt_fname, "edp_%04i%04i.png", imd, iy);
+    sprintf(plt_fname, "edp_%04i%04i_%4.2fUTC.png", imd, iy, hour);
     sprintf(plt_title, "Electron Density Profile: %04i%04i at %4.2f UTC", imd, iy, hour);
     plot_edp(plt_fname, plt_title, num_steps, height_km, log10_ne_cc, pCoords, dCoords);
 
