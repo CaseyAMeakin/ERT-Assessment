@@ -31,6 +31,14 @@ SUBROUTINE IRITEST_SUB(
 For plotting I used the minimalist C language-based GNU [libplot](https://www.gnu.org/software/plotutils/manual/en/html_node/libplot.html#libplot) library from the [GNU plotutils package](https://www.gnu.org/software/plotutils/manual/en/html_node/index.html). The advantage is that it is highly portable. The disadvantage is that it consists of only very low level drawing utilities thus requiring significant coding effort to implement scientific graphing capabilities. Another disadvantage is that the documentation is difficult to navigate and incomplete for the C api.
 
 
+### Shortcomings
+
+Given the time constraints, this code is provided merely as a proof-of-principle and is far from production ready code. Therefore, it has many shortcomings. Some of these include:
+
+* Error handling: Besides some basic handling in the top-most plot routine, there is almost no error handling. The integer return value error handling used in the top level `void plot_edp(...)` function defined in source file [`src/my_c_driver/iri_driver.c`](src/my_c_driver/iri_driver.c) provides an example of how this could be done in other areas.
+
+* Capabilities: The current code contains the absolute bare minimum functionality requested and is very much hard coded. Real-world applications would likely benefit from providing more user control over the various parameters involved as well as extending the plotting capabilities and associated abstractions.
+
 
 ### Usage
 
