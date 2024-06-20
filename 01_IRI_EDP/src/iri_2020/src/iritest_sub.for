@@ -107,10 +107,10 @@ C 2020.05 10/22/23 delete user input option for HNEA and HNEE
 C 2020.05 10/22/23 hmF2: AMTB model (better results at low lat)(D.Drob)
 C 2020.05 10/22/23 topside/plasmasphere: NeQuick default
 C
-      SUBROUTINE IRITEST_SUB(num_steps, height_km, ne_cc)
+      SUBROUTINE IRITEST_SUB(iy, imd, hour, num_steps, height_km, ne_cc)
 
-      INTEGER           num_steps, intvar
-      real*8            height_km(1000), ne_cc(1000)
+      INTEGER           num_steps, iy, imd
+      real*8            height_km(1000), ne_cc(1000), hour
 
       INTEGER           pad1(6),jdprof(77),piktab
       DIMENSION         outf(20,1000),oar(100,1000),jfi(6)
@@ -187,10 +187,10 @@ c       read(5,*) hx
         jm = 0
         xlat = 37.8 ! i.e., 37.8N
         xlon = -75.4 ! i.e., 75.4W
-        iy = 2021
-        imd = 0303
+        !iy = 2021
+        !imd = 0303
         iut = 1 ! UT
-        hour = 23
+        !hour = 23.0
         hx = 100
 
 
