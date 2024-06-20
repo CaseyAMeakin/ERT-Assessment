@@ -52,9 +52,3 @@ iri_c.x: ${iri_obj} ${my_c_driver_obj}
 			${INC_PLPLOT} \
 			${LIB_PLPLOT}
 
-my_plotter.x:  ${my_plotter_lib_src} my_plotter.c
-	@cc -o my_plotter.x \
-			my_plotter.c \
-			${my_plotter_src_dir}/my_plotter_lib.c \
-			${INC_PLPLOT} \
-			${LIB_PLPLOT}
