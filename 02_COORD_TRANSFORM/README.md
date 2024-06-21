@@ -43,7 +43,7 @@ Use the **Vincenty** algorithm to find geodesic distance based on oblate spheroi
 Build using c compiler:
 
 ```
-cc coord_transform.c  -o coord_transform.x -lm
+> cc coord_transform.c  -o coord_transform.x -lm
 ```
 
 Exectute on command line:
