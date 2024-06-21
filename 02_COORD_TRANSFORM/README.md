@@ -32,6 +32,7 @@ double *glatFinal);
 
 Use the **Vincenty** algorithm to find geodesic distance based on oblate spheroid model of Earth, otherwise use spherical model with mean Earth radius based on WHS84 ellipsoid.
 
+I slightly modified the function names for symmetry, so that they are `GisToRadar` and `RadarToGis` but are otherwise like that in the problem description.
 
 ### Proposed Improvements
 
