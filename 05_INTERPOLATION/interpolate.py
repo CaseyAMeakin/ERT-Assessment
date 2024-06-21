@@ -29,8 +29,8 @@ SAMPLE_VAL = np.array([dat[2] for dat in SAMPLE_DATA])
 def get_nearest_point_index(points, xpos, ypos) -> int:
     nodes = np.asarray(points)
     node = tuple((xpos, ypos))
-    dist_2 = np.sum((nodes - node) ** 2, axis=1)
-    return np.argmin(dist_2)
+    distSquared = np.sum((nodes - node) ** 2, axis=1)
+    return np.argmin(distSquared)
 
 
 def my_interpolate_nearest(data_pos, data_val, xygrid) -> np.ndarray:
