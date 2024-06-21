@@ -66,6 +66,8 @@ make iri_c.x
 
 The program is executed from the *./dat* sub directory which contains a symbolic link to the executable as well as required supporting data (i.e., the *.dat and *.asc files).
 
+The program requires the GNU libplot library is installed (`libplot.so`) and has available include file (`plot.h`). Source code for this library can be on the [gnu.org](https://gnu.org) website [here](https://www.gnu.org/software/plotutils/). Version 2.6 was used for this assessment and can be downloaded from [here](https://ftp.gnu.org/gnu/plotutils/).
+
 ### Project Organization
 
 The source code for the project is organized into the following sub directories:
