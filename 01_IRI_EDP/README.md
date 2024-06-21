@@ -14,7 +14,7 @@
 
 ### Approach
 
-A C driver for the IRI program was created by writing a very thin wrapper around the fortran IRI test program *iritest.for* which is distributed with the IRI model at [irimodel.or](http://irimodel.org/) website (version IRI-2020 of the model was used for this exercise). The *iritest.for* program was used to create a subroutine to provide an api for the C driver program by hard coding all of the IRI model input parameters except for the date and time, which are the only parameters to be varied for the project. The resulting fortran subroutine has the following call signature:
+A C driver for the IRI program was created by writing a very thin wrapper around the fortran IRI test program *iritest.for* which is distributed with the IRI model at [irimodel.org](http://irimodel.org/) website (version IRI-2020 of the model was used for this exercise). The *iritest.for* program was used to create a subroutine to provide an api for the C driver program by hard coding all of the IRI model input parameters except for the date and time, which are the only parameters to be varied for the project. The resulting fortran subroutine has the following call signature:
 
 ```
 SUBROUTINE IRITEST_SUB(
