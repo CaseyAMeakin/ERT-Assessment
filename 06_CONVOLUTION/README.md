@@ -17,7 +17,7 @@ Inspection of the data in the input files shows that it is from a regular grid b
 
 #### 2. Convolution and Testing
 
-The `scipy.signal.convolve2d` function from the `scipy` package is used to compute the 2d convolution. In order to test that the convolution function is operating as expected, convolution with an approximate delta function, i.e., a 2D array with a single non-zero value of 1.0 in a central location, is investigated as a first step. The convolution of the input data and the approximate delta function should act as an identity operation and return the original image, as it was (see figure below).
+The `scipy.signal.convolve2d` function from the `scipy` package is used to compute the 2d convolution. In order to test that the convolution function is operating as expected, convolution with an approximate delta function, i.e., a 2D array with a single non-zero value of 1.0 in a central location, is investigated as a first step. The convolution of the input data and the approximate delta function should act as an identity operation and return the original image, as it is found to (see figure below).
 
 
 #### 3. Data Presentation
