@@ -40,7 +40,7 @@ and will generate a single output file called "interpolate_samples.png" (show be
 ### Sample Output (Screenshots)
 
 <p>
-Figure. <b>Top-left</b>: location of structure grid (grey) and data sample points (blue circles). <b>Top-right</b>: cubic interpolation using scipy's griddata routine. <b>Bottom-left</b>: nearest point interpolation using scipy's griddata routine. <b>Bottom-right</b>: linear interpolation using a hand-coded nearest point interpolation routine.
+Figure. <b>Top-left</b>: location of structured grid (grey) and data sample points (blue circles). <b>Top-right</b>: cubic interpolation using scipy's griddata routine. <b>Bottom-left</b>: nearest point interpolation using scipy's griddata routine. <b>Bottom-right</b>: linear interpolation using a hand-coded nearest point interpolation routine.
 </p>
 
 ![interpolate_samples.png](./interpolate_samples.png)
