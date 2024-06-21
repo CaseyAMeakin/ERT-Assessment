@@ -1,0 +1,6 @@
+*.stderr
+*.stdout
+*.o
+*.x
+*.zip
+*.json
