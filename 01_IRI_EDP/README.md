@@ -31,7 +31,7 @@ SUBROUTINE IRITEST_SUB(
 For plotting I used the minimalist C language-based GNU [libplot](https://www.gnu.org/software/plotutils/manual/en/html_node/libplot.html#libplot) library from the [GNU plotutils package](https://www.gnu.org/software/plotutils/manual/en/html_node/index.html). The advantage is that it is highly portable. The disadvantage is that it consists of only very low level drawing utilities thus requiring significant coding effort to implement scientific graphing capabilities. Another disadvantage is that the documentation is difficult to navigate and incomplete for the C api.
 
 
-### Shortcomings
+### Proposed Improvements
 
 Given the time constraints, this code is provided merely as a proof-of-principle and is far from production ready code. Therefore, it has many shortcomings. Some of these include:
 
