@@ -17,6 +17,35 @@
 > * b. Test it for some time, how would you go about comparing it to the real results?
 
 ### Approach
+
+TBD
+
+##### Overall Architecture
+
+TBD
+
+##### Data Acquisition
+
+TBD
+
+##### Data Persistence
+
+TBD
+
+##### Deployment
+
+TBD
+
+##### GUI
+
+TBD
+
+##### Prediction (ML)
+
+TBD
+
+### Proposed Improvements
+
 TBD
 
 ### Usage

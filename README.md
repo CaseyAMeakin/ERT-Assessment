@@ -3,8 +3,8 @@
 ### Instructions (original problem statement)
 
 > Please submit all work products, including documentation, through your open public github
-account and discuss these during the technical interview process. Please complete as many
-assessment challenges as you would like. No hard timeline, so submit when you feel ready and
+account and discuss these during the technical interview process. **Please complete as many
+assessment challenges as you would like.** No hard timeline, so submit when you feel ready and
 have a good high-level understanding of what we do.  These exercises are extracted from our
 working code and are intended to provide realistic examples of what we do to support AFRL
 R&D ionospheric impact application development. Evaluation criteria are based on
@@ -23,7 +23,6 @@ This github repository contains the work done and documentation produced for thi
 |04_JAVASCRIPT_CANVAS| completed|
 |05_INTERPOLATION| completed|
 |06_CONVOLUTION| completed|
-|||
 
 Given the time I had available I completed 5 of the 6 assessment challenges.
 
@@ -32,7 +31,7 @@ The work was completed during two evenings the week of Monday, the 17th of June 
 
 #### A Note on the Data Collection Assessment
 
-For the uncompleted task ("Data Collection"), I would have implemented this as a standard CRUD (create, read, update, delete) web app using a lightweight framework such as Flask or FastAPI. For persistence, the json based table data from SWPC is well suited to be stored within an SQL database: sqlite, mysql, or postgresql are good candidates, depending on the expected app load. My container system of choice is Docker: creating the image would require a Dockerfile, which could be placed in the git repos for ease of image creation upon app updates. For the dashboard, I would have used React.js because of my experience with it although vanilla JS or another framework would be fine. For predicting a solar storm, I would have reviewed current approaches in the literature (e.g., see reference [1] below) and implemented using one of the powerful python packages available (e.g., pytorch or tensorflow for deep learning approaches or scikit-learn if a simpler classical approach like *random forest* were adopted).
+For the uncompleted task ("Data Collection"), I would have implemented this as a standard CRUD (create, read, update, delete) web app using a lightweight framework such as Flask or FastAPI. For persistence, the json based table data from SWPC is well suited to be stored within an SQL database: sqlite, mysql, or postgresql are good candidates, depending on the expected app load. My container system of choice is Docker: creating the image would require a Dockerfile, which could be placed in the git repos for ease of image creation upon app updates. For the dashboard, I would have used React.js because of my experience with it although vanilla JS or another framework would be fine. For predicting a solar storm, I would have reviewed current approaches in the literature (e.g., see reference [1] below) and implemented using one of the powerful and freely available ML python packages (e.g., pytorch or tensorflow for deep learning approaches; or scikit-learn if a simpler classical approach like *random forest* were adopted).
 
 
 # References
