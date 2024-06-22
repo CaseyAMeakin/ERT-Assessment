@@ -42,7 +42,6 @@ my_plotter_lib_src=${my_plotter_src_dir}/my_plotter_lib.c \
 clean:
 	-rm ${iri_obj} > /dev/null 2> /dev/null
 	-rm iri_c.x
-	-rm my_plotter.x
 
 iri_c.x: ${iri_obj} ${my_c_driver_obj}
 	@f77 -o iri_c.x \
