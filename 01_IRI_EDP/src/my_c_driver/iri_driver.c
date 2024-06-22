@@ -4,8 +4,7 @@
 
 #include "my_plotter_lib.h"
 
-
-void plot_edp(
+int plot_edp(
               const char *plt_fname,
               const char *plt_title,
               int num_step,
